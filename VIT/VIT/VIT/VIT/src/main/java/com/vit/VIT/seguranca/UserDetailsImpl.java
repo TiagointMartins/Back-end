@@ -1,26 +1,27 @@
-package org.generation.blogPessoal.seguranca;
+package com.vit.VIT.seguranca;
 
 import java.util.Collection;
 
-import org.generation.blogPessoal.model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class UserDetailsImpl implements UserDetails {
+import com.vit.VIT.model.Usuario;
 
+public class UserDetailsImpl implements UserDetails {
+	
 	private static final long serialVersionUID = 1L;
 	
-
 	private String userName;
+	
 	private String password;
-
-	public UserDetailsImpl(Usuario user) { 
+	
+	public UserDetailsImpl (Usuario user) {
 		this.userName = user.getUsuario();
 		this.password = user.getSenha();
 	}
+	
+	public UserDetailsImpl() {}
 
-	public UserDetailsImpl() {
-	} 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
@@ -41,26 +42,27 @@ public class UserDetailsImpl implements UserDetails {
 
 	@Override
 	public boolean isAccountNonExpired() {
-		
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		
+		// TODO Auto-generated method stub
 		return true;
 	}
-
+	
+	
 }
